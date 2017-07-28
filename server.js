@@ -36,6 +36,7 @@ app.get('/people', (req, res) => {
     .then(result => {
       res.send(result.data);
     }).catch(error => {
+      console.log(error)
       res.send(error);
     });
 });
