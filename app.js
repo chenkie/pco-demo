@@ -28,10 +28,13 @@ window.addEventListener('load', function() {
 
   if (CODE) {
     window.location.search = '';
-    axios.post('/auth/exchange', { CODE }).then(function(result) {
-      console.log(result);
-    }).catch(function(error) {
-      console.log(error);
-    });
+    axios
+      .post('/auth/exchange', { CODE })
+      .then(function(result) {
+        console.log(result);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 });
