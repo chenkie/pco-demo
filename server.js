@@ -26,17 +26,18 @@ app.post('/auth/exchange', (req, res) => {
     accessToken = result.data.access_token;
     res.send('success');
   }).catch(err => {
+    console.log(err)
     res.send(err);
   });
 });
 
 app.get('/people', (req, res) => {
   const headers = { Authorization: `Bearer ${accessToken}` };
+  console.log(headers);
   axios.get('https://api.planningcenteronline.com/people/v2/people', { headers })
     .then(result => {
       res.send(result.data);
     }).catch(error => {
-      console.log(error)
       res.send(error);
     });
 });
